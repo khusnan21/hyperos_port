@@ -1,9 +1,0 @@
-/*.zip
-/build/
-/dist/
-/tmp/
-/out/
-.DS_Store
-*.pyc
-/.history/
-/devices/pad/*
