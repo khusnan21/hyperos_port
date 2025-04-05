@@ -122,11 +122,11 @@ patch_smali() {
             smalidir=$(echo $targetsmali |cut -d "/" -f 3)
             yellow "I: 开始patch目标 ${smalidir}" "Target ${smalidir} Found"
             search_pattern=$3
-            repalcement_pattern=$4
+            replacement_pattern=$4
             if [[ $5 == 'regex' ]];then
-                 sed -i "/${search_pattern}/c\\${repalcement_pattern}" $targetsmali
+                 sed -i "/${search_pattern}/c\\${replacement_pattern}" $targetsmali
             else
-            sed -i "s/$search_pattern/$repalcement_pattern/g" $targetsmali
+            sed -i "s/$search_pattern/$replacement_pattern/g" $targetsmali
             fi
             ${SMALI_COMMAND} a --api ${port_android_sdk} tmp/$foldername/${smalidir} -o tmp/$foldername/${smalidir}.dex > /dev/null 2>&1 || error " Smaling 失败" "Smaling failed"
             pushd tmp/$foldername/ >/dev/null || exit
