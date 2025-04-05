@@ -1626,7 +1626,7 @@ else
     sed -i '/^REM OFFICAL_BOOT_START/,/^REM OFFICAL_BOOT_END/d' out/${os_type}_${device_code}_${port_rom_version}/windows_flash_script.bat
         
     elif [[ -f "$custom_bootimg_file" ]];then
-        custombootimg=$(basename "$custom_botimg_file")
+        custombootimg=$(basename "$custom_bootimg_file")
         mv -f $custom_botimg_file out/${os_type}_${device_code}_${port_rom_version}/
         mv -f  devices/$base_rom_code/dtbo_custom.img out/${os_type}_${device_code}_${port_rom_version}/firmware-update/dtbo_custom.img
         sed -i "s/boot_tv.img/$custombootimg/g" out/${os_type}_${device_code}_${port_rom_version}/META-INF/com/google/android/update-binary
